@@ -1,7 +1,67 @@
-.v-navigation-drawer {
-  background-color: #3e4449 !important;
+.v-toolbar {
+  padding-left: 200px !important;
+  box-shadow: none !important;
+  background-color: #f9fafb;
 }
 
-.v-toolbar__content {
-  background-color: #f9fafb;
+.v-navigation-drawer {
+  width: 200px !important;
+  background-color: #3e4449 !important;
+  color: #7d8d96;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: right;
+}
+
+.v-content {
+  padding-left: 200px !important;
+  overflow: auto;
+}
+
+.v-toolbar__title {
+  padding-top: 20px;
+  color: #7d8d96;
+}
+
+.charts {
+  width: 50% !important;
+  height: 100%;
+  float: left;
+  border-right: 1px solid #cfcfd0;
+}
+
+.leads {
+  width: 50% !important;
+  float: left;
+  overflow: hidden;
+}
+
+.v-content__wrap {
+    margin: 10px 0 0 25px;
+    box-shadow: 0 0 20px #ccc;
+}
+
+.social {
+  width: 15% !important;
+  height: 50px;
+  float: left;
+  font-size: 22px;
+  line-height: 36px !important;
+  text-align: center;
+  vertical-align: middle;
+  color: #cfcfd0;
+  background: #f0f2f4;
+	padding: 5px 3px 2px 3px;
+  margin: 0 7px 0 0 !important;
+}
+
+.tam {
+  text-align: center;
+  color: #7d8d96;
+  font-size: 12px;
+}
+
+.tam-figure {
+  font-size: 30px;
+  line-height: 34px;
 }

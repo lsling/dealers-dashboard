@@ -4,6 +4,7 @@
   <link href="styles.css" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
@@ -21,7 +22,21 @@
         </v-container>
       </v-navigation-drawer>
       <v-content>
-        <v-container>Icons here</v-container>
+          <v-container class="charts">
+            <div class="social fab fa-facebook"></div>
+            <div class="social far fa-hand-peace"></div>
+            <div class="social fab fa-google"></div>
+            <div class="social fab fa-amazon"></div>
+            <div class="tam">TAM (Total Available Market)
+              <div class="tam-figure">205,124</div>
+            </div>
+          </v-container>
+          <v-container class="leads">Latest Leads
+            <div class="lead">Honda</div>
+            <div class="lead">Honda</div>
+            <div class="lead">Honda</div>
+            <div class="lead">Honda</div>
+          </v-container>
       </v-content>
     </v-app>
   </div>
