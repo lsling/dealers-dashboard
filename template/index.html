@@ -42,11 +42,44 @@
               </select>
             </div>
           </v-container>
-          <v-container class="leads">Latest Leads
-            <div class="lead">Honda</div>
-            <div class="lead">Honda</div>
-            <div class="lead">Honda</div>
-            <div class="lead">Honda</div>
+          <v-container class="leads">
+            <div class="lead-head">Latest Leads</div>
+            <div class="search-wrapper">
+              <input class="search" type="text" name="search" v-model="search" placeholder="Search leads...">
+              <i class="fas fa-search"></i>
+            </div>
+            <br><br>
+            <hr>
+            <div class="latest">
+              <div class="latest-icon"><i class="far fa-play-circle"></i><br>Facebook</div>
+              <div class="car">2015 Honda Civic<br>#546829307<br>12 days<br></div>
+              <div class="time-stamp">05/18/18  3:42 am</div>
+              <div class="phone">888-888-8888</div>
+            </div>
+            <hr>
+            <div class="latest">
+              <div class="latest-icon"><i class="far fa-play-circle"></i><br>Facebook</div>
+              <div class="car">2015 Honda Civic<br>#546829307<br>12 days<br></div>
+              <div class="time-stamp">05/18/18  3:42 am</div>
+              <div class="phone">888-888-8888</div>
+            </div>
+            <hr>
+            <div class="latest">
+              <div class="latest-icon"><i class="far fa-envelope"></i><br>Facebook</div>
+              <div class="car">2015 Honda Civic<br>#546829307<br>12 days<br></div>
+              <div class="time-stamp">05/18/18  3:42 am</div>
+              <div class="phone">888-888-8888</div>
+            </div>
+            <hr>
+            <div class="latest">
+              <div class="latest-icon"><i class="fab fa-facebook-messenger"></i><br>Facebook</div>
+              <div class="car">2015 Honda Civic<br>#546829307<br>12 days<br></div>
+              <div class="time-stamp">05/18/18  3:42 am</div>
+              <div class="phone">888-888-8888</div>
+            </div>
+            <hr>
+            <div class="all-leads">See all leads</div>
+            <div class="lead-nav"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up"></i></div>
           </v-container>
       </v-content>
     </v-app>

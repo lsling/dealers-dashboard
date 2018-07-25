@@ -18,9 +18,14 @@
   overflow: auto;
 }
 
+.v-content__wrap {
+  max-width: 95% !important;
+}
+
 .v-toolbar__title {
   padding-top: 20px;
   color: #7d8d96;
+  font-weight: 400 !important;
 }
 
 .charts {
@@ -34,6 +39,9 @@
   width: 50% !important;
   float: left;
   overflow: hidden;
+  font-size: 20px;
+  font-weight: 400;
+  color: #7d8d96;
 }
 
 .v-content__wrap {
@@ -81,4 +89,74 @@ select {
   height: 45px;
   text-align-last: center;
   font-size: 18px !important;
+}
+
+.search-wrapper {
+  float: right;
+  font-size: 16px;
+  color: #d0d8dc;
+  border-bottom: 2px solid #7d8d96;
+}
+
+input::placeholder {
+  color: #d0d8dc;
+}
+
+.lead-head {
+  float: left;
+}
+
+hr {
+  margin: 30px 0 30px 0;
+}
+
+.fa-play-circle {
+  font-size: 50px;
+  color: #b0e3ff;
+}
+
+.fa-envelope {
+  font-size: 50px;
+  color: #b0e3ff;
+}
+
+.fa-facebook-messenger {
+  font-size: 50px;
+  color: #b0e3ff;
+}
+
+.latest-icon {
+  font-size: 12px;
+  float: left;
+  padding: 0 60px 0 0;
+}
+
+.time-stamp {
+  font-size: 12px;
+}
+
+.phone {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 20px 0 5px 0;
+}
+
+.car {
+  float: right;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.lead-nav {
+  font-size: 26px;
+}
+
+.fa-chevron-down {
+  padding-right: 10px;
+}
+
+.all-leads {
+  float: right;
+  font-size: 12px;
+  text-decoration: underline;
 }
