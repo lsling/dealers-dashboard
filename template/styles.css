@@ -1,3 +1,7 @@
+.all-leads[type=button] {
+    border: 0px;
+    -webkit-appearance: none;
+}
 .v-toolbar {
   padding-left: 200px !important;
   box-shadow: none !important;
@@ -47,6 +51,7 @@
 .v-content__wrap {
     margin: 10px 0 0 25px;
     box-shadow: 0 0 20px #ccc;
+    background: #fff;
 }
 
 .social {
@@ -61,6 +66,11 @@
   background: #f0f2f4;
 	padding: 5px 3px 2px 3px;
   margin: 0 7px 0 0 !important;
+}
+
+.social:hover {
+  background: #fff;
+  color: #4267b2;
 }
 
 .tam {
@@ -153,6 +163,14 @@ hr {
 
 .fa-chevron-down {
   padding-right: 10px;
+}
+
+.fa-chevron-up:hover {
+  cursor: pointer;
+}
+
+.fa-chevron-down:hover {
+  cursor: pointer;
 }
 
 .all-leads {

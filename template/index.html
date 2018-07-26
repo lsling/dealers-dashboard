@@ -41,6 +41,7 @@
                 <option>Leads</option>
               </select>
             </div>
+            <canvas id="stackedBar" width="400" height="400"></canvas>
           </v-container>
           <v-container class="leads">
             <div class="lead-head">Latest Leads</div>
@@ -78,7 +79,7 @@
               <div class="phone">888-888-8888</div>
             </div>
             <hr>
-            <div class="all-leads">See all leads</div>
+            <div class="all-leads" type="button">See all leads</div>
             <div class="lead-nav"><i class="fas fa-chevron-down"></i><i class="fas fa-chevron-up"></i></div>
           </v-container>
       </v-content>
@@ -87,6 +88,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+  <script src="template/chart.js"></script>
   <script>
     new Vue({ el: '#app' })
   </script>
