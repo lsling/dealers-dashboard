@@ -131,6 +131,8 @@ i.v-icon.material-icons:hover {
   padding: 40px 0 0 0;
 }
 
+/* leads */
+
 .search-wrapper {
   float: right;
   font-size: 16px;
@@ -210,4 +212,73 @@ input::placeholder {
   float: right;
   font-size: 12px;
   text-decoration: underline;
+}
+
+/* charts */
+.chartjs-wrapper {
+  padding-top: 20px;
+  margin:0 auto;
+  width: 100%;
+  height: auto;
+}
+
+.chartjs-stacked-bar-impress {
+  height: 50px !important;
+}
+
+.chartjs-stacked-bar-reach {
+  height: 50px !important;
+}
+
+.chartjs-stacked-bar-engage {
+  height: 50px !important;
+}
+
+.chartjs-stacked-bar-traffic {
+  height: 50px !important;
+}
+
+.chartjs-stacked-bar-leads {
+  height: 50px !important;
+}
+
+.label {
+  text-align: center;
+}
+
+.chart-label-blue {
+  color: rgba(72,172,255,1);
+  font-weight: bold;
+}
+
+.chart-label-green {
+  color: rgba(150,199,93,1);
+  font-weight: bold;
+}
+
+.chart-label-orange {
+  color: rgba(249,123,59,1);
+  font-weight: bold;
+}
+
+.chartjs-doughnut {
+  height: 20% !important;
+  width: 20% !important;
+  margin: auto;
+}
+
+.current {
+  float: left;
+  font-size: 16px;
+  color: #b7b7b7;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.goal {
+  float: right;
+  font-size: 16px;
+  color: #b7b7b7;
+  text-transform: uppercase;
+  font-weight: bold;
 }

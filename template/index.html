@@ -45,7 +45,21 @@
                 <option>Leads</option>
               </select>
             </div>
-            <canvas id="myChart" width="400" height="400"></canvas>
+            <div class="chartjs-wrapper">
+              <div class="current">Current</div><div class="goal">Goal</div><br><br>
+              <div class="label chart-label-blue">Impressions</div>
+              <canvas class="chartjs-stacked-bar-impress"></canvas>
+              <div class="label chart-label-blue">Reach</div>
+              <canvas class="chartjs-stacked-bar-reach"></canvas>
+              <div class="label chart-label-green">Engagement</div>
+              <canvas class="chartjs-stacked-bar-engage"></canvas>
+              <div class="label chart-label-green">Traffic</div>
+              <canvas class="chartjs-stacked-bar-traffic"></canvas>
+              <div class="label chart-label-orange">Leads</div>
+              <canvas class="chartjs-stacked-bar-leads"></canvas>
+              <div class="label chart-label-orange">Units Sold</div>
+              <canvas class="chartjs-doughnut"></canvas>
+            </div>
           </v-container>
           <v-container class="leads">
             <div class="lead-head">Latest Leads</div>
@@ -90,54 +104,12 @@
     </v-app>
   </div>
 
-
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
   <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
+
   <script>
-  var canvas = document.getElementById("myChart");
-  var ctx = canvas.getContext('2d');
-
-  // Data with datasets options
-  var data = {
-      labels: ["Vanilla", "Chocolate", "Strawberry"],
-        datasets: [
-          {
-              label: "Ice Cream Sales ",
-              fill: true,
-              backgroundColor: [
-                  'moccasin',
-                  'saddlebrown',
-                  'lightpink'],
-              data: [11, 9, 4]
-          }
-      ]
-  };
-
-  // Notice how nested the beginAtZero is
-  var options = {
-          title: {
-                    display: true,
-                    text: 'Ice Cream Truck Report',
-                    position: 'bottom'
-                },
-          scales: {
-              yAxes: [{
-                  ticks: {
-                      beginAtZero:true
-                  }
-              }]
-          }
-  };
-
-  // Chart declaration:
-  var myChart = new Chart(ctx, {
-      type: 'bar',
-      data: data,
-      options: options
-  });
-
   new Vue({
     el: '#app',
     data () {
@@ -152,6 +124,213 @@
       }
     }
   })
+
+  var chart = new Chart(
+      document.getElementsByClassName('chartjs-stacked-bar-impress'),
+      {
+      type: 'horizontalBar',
+      data: {
+          labels: ["Impressions"],
+          datasets: [{
+              data: [18234],
+              label:"Current",
+              backgroundColor: "rgba(72,172,255,1)",
+          },{
+              data: [40945],
+              label: "Goal",
+              backgroundColor: "rgba(176,227,255,1)",
+          }]
+      },
+      options: {
+          scales: {
+              xAxes: [{
+                display: false,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+              yAxes: [{
+                display: false,
+                categoryPercentage: 0.9,
+                barPercentage: 0.3,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+          },
+          legend: { display: false },
+      }
+  });
+
+  var chart = new Chart(
+      document.getElementsByClassName('chartjs-stacked-bar-reach'),
+      {
+      type: 'horizontalBar',
+      data: {
+          labels: ["Reach"],
+          datasets: [{
+              data: [3964],
+              label:"Current",
+              backgroundColor: "rgba(72,172,255,1)",
+          },{
+              data: [12695],
+              label: "Goal",
+              backgroundColor: "rgba(176,227,255,1)",
+          }]
+      },
+      options: {
+          scales: {
+              xAxes: [{
+                display: false,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+              yAxes: [{
+                display: false,
+                categoryPercentage: 0.9,
+                barPercentage: 0.3,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+          },
+          legend: { display: false },
+      }
+  });
+
+  var chart = new Chart(
+      document.getElementsByClassName('chartjs-stacked-bar-engage'),
+      {
+      type: 'horizontalBar',
+      data: {
+          labels: ["Engagement"],
+          datasets: [{
+              data: [1845],
+              label:"Current",
+              backgroundColor: "rgba(150,199,93,1)",
+          },{
+              data: [3598],
+              label: "Goal",
+              backgroundColor: "rgba(205,241,164,1)",
+          }]
+      },
+      options: {
+          scales: {
+              xAxes: [{
+                display: false,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+              yAxes: [{
+                display: false,
+                categoryPercentage: 0.9,
+                barPercentage: 0.3,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+          },
+          legend: { display: false },
+      }
+  });
+
+  var chart = new Chart(
+      document.getElementsByClassName('chartjs-stacked-bar-traffic'),
+      {
+      type: 'horizontalBar',
+      data: {
+          labels: ["Traffic"],
+          datasets: [{
+              data: [987],
+              label:"Current",
+              backgroundColor: "rgba(150,199,93,1)",
+          },{
+              data: [1200],
+              label: "Goal",
+              backgroundColor: "rgba(205,241,164,1)",
+          }]
+      },
+      options: {
+          scales: {
+              xAxes: [{
+                display: false,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+              yAxes: [{
+                display: false,
+                categoryPercentage: 0.9,
+                barPercentage: 0.3,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+          },
+          legend: { display: false },
+      }
+  });
+
+  var chart = new Chart(
+      document.getElementsByClassName('chartjs-stacked-bar-leads'),
+      {
+      type: 'horizontalBar',
+      data: {
+          labels: ["Leads"],
+          datasets: [{
+              data: [509],
+              label:"Current",
+              backgroundColor: "rgba(249,123,59,1)",
+          },{
+              data: [700],
+              label: "Goal",
+              backgroundColor: "rgba(251,182,142,1)",
+          }]
+      },
+      options: {
+          scales: {
+              xAxes: [{
+                display: false,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+              yAxes: [{
+                display: false,
+                categoryPercentage: 0.9,
+                barPercentage: 0.3,
+                  stacked: true,
+                    gridLines: {
+                      display: false,
+                    }
+              }],
+          },
+          legend: { display: false },
+      }
+  });
+
+  var myDoughnutChart = new Chart(
+    document.getElementsByClassName('chartjs-doughnut'),
+    {
+      type: 'doughnut',
+      data: {
+        datasets: [{
+            data: [14, 6],
+            backgroundColor: ["rgba(249,123,59,1)", "rgba(251,182,142,1)"],
+        }],
+      }
+  });
   </script>
 </body>
 </html>
