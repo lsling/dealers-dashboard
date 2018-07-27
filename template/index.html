@@ -14,12 +14,16 @@
         <v-toolbar-title>Dashboard</v-toolbar-title>
       </v-toolbar>
       <v-navigation-drawer app>
-        <v-container>
-          <p>Dashboard</p>
-          <p>Plays</p>
-          <p>Leads</p>
-          <p>Inventory</p>
-        </v-container>
+        <v-list dense class="pt-0">
+          <v-list-tile v-for="item in items" :key="item.title" @click="">
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+          </v-list-tile>
+        </v-list>
       </v-navigation-drawer>
       <v-content>
           <v-container class="charts">
@@ -41,7 +45,7 @@
                 <option>Leads</option>
               </select>
             </div>
-            <canvas id="stackedBar" width="400" height="400"></canvas>
+            <canvas id="myChart" width="400" height="400"></canvas>
           </v-container>
           <v-container class="leads">
             <div class="lead-head">Latest Leads</div>
@@ -52,21 +56,21 @@
             <br><br>
             <hr>
             <div class="latest">
-              <div class="latest-icon"><i class="far fa-play-circle"></i><br>Facebook</div>
+              <div class="latest-icon"><i class="material-icons">play_circle_outline</i><br>Facebook</div>
               <div class="car">2015 Honda Civic<br>#546829307<br>12 days<br></div>
               <div class="time-stamp">05/18/18  3:42 am</div>
               <div class="phone">888-888-8888</div>
             </div>
             <hr>
             <div class="latest">
-              <div class="latest-icon"><i class="far fa-play-circle"></i><br>Facebook</div>
+              <div class="latest-icon"><i class="material-icons">play_circle_outline</i><br>Facebook</div>
               <div class="car">2015 Honda Civic<br>#546829307<br>12 days<br></div>
               <div class="time-stamp">05/18/18  3:42 am</div>
               <div class="phone">888-888-8888</div>
             </div>
             <hr>
             <div class="latest">
-              <div class="latest-icon"><i class="far fa-envelope"></i><br>Facebook</div>
+              <div class="latest-icon"><i class="material-icons">mail_outline</i><br>Facebook</div>
               <div class="car">2015 Honda Civic<br>#546829307<br>12 days<br></div>
               <div class="time-stamp">05/18/18  3:42 am</div>
               <div class="phone">888-888-8888</div>
@@ -86,12 +90,68 @@
     </v-app>
   </div>
 
+
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
-  <script src="template/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <script src="https://unpkg.com/vue-chartjs/dist/vue-chartjs.min.js"></script>
   <script>
-    new Vue({ el: '#app' })
+  var canvas = document.getElementById("myChart");
+  var ctx = canvas.getContext('2d');
+
+  // Data with datasets options
+  var data = {
+      labels: ["Vanilla", "Chocolate", "Strawberry"],
+        datasets: [
+          {
+              label: "Ice Cream Sales ",
+              fill: true,
+              backgroundColor: [
+                  'moccasin',
+                  'saddlebrown',
+                  'lightpink'],
+              data: [11, 9, 4]
+          }
+      ]
+  };
+
+  // Notice how nested the beginAtZero is
+  var options = {
+          title: {
+                    display: true,
+                    text: 'Ice Cream Truck Report',
+                    position: 'bottom'
+                },
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      beginAtZero:true
+                  }
+              }]
+          }
+  };
+
+  // Chart declaration:
+  var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: data,
+      options: options
+  });
+
+  new Vue({
+    el: '#app',
+    data () {
+      return {
+        items: [
+          { title: 'Dashboard', icon: 'dashboard' },
+          { title: 'Plays', icon: 'question_answer' },
+          { title: 'Leads', icon: 'dashboard' },
+          { title: 'Inventory', icon: 'question_answer' }
+        ],
+        right: null
+      }
+    }
+  })
   </script>
 </body>
 </html>
